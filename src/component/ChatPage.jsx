@@ -131,14 +131,13 @@ const ChatPage = ({ onLeave }) => {
         navigate("/");
     }
 
-
     return (
         <div className="flex flex-col h-screen bg-gray-100 dark:bg-gray-950 p-4">
             {/* Navbar */}
             <div className="flex items-center justify-between p-4 bg-blue-600 text-white shadow-md rounded-lg">
                 <div className='flex flex-wrap gap-4'>
-                    <h2 className="text-lg font-semibold">Room ID: {roomId}</h2>
-                    <h2 className="text-lg font-semibold mx-2">Client: {currentUser}</h2>
+                    <h2 className="text-lg font-semibold font-mono"> Room ID : {roomId}</h2>
+                    <h2 className="text-lg font-semibold font-mono mx-2"> User : {currentUser}</h2>
                 </div>
                 <button
                     onClick={handleLogout}
@@ -175,7 +174,7 @@ const ChatPage = ({ onLeave }) => {
             <div className='flex mx-auto gap-1' style={{ width: '60vw' }}>
                 <input
                     type="text"
-                    className="flex-1 p-4 rounded-full focus:outline-none focus:ring-2 focus:ring-green-600 bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-white"
+                    className="flex-1 p-4 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-600 bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-white"
                     placeholder="Type a message..."
                     value={input}
                     onChange={(e) => setInput(e.target.value)}
