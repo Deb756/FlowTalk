@@ -134,7 +134,7 @@ const ChatPage = ({ onLeave }) => {
     return (
         <div className="flex flex-col h-screen bg-gray-100 dark:bg-gray-950 p-4">
             {/* Navbar */}
-            <div className="flex items-center justify-between p-4 bg-blue-600 text-white shadow-md rounded-lg">
+            <div className="flex items-center justify-between p-4  text-white shadow-md rounded-lg" style={{backgroundColor:'rgb(34 30 45)'}}>
                 <div className='flex flex-wrap gap-4'>
                     <h2 className="text-lg font-semibold font-mono"> Room ID : {roomId}</h2>
                     <h2 className="text-lg font-semibold font-mono mx-2"> User : {currentUser}</h2>
@@ -153,7 +153,7 @@ const ChatPage = ({ onLeave }) => {
                 {messages.map((msg, index) => (
                     <div
                         key={index}
-                        className={`flex items-center space-x-2 p-3 max-w-xs rounded-lg text-white w-fit ${msg.sender === currentUser ? 'bg-indigo-950 self-end ml-auto' : 'bg-gray-700 self-start mr-auto'}`}
+                        className={`flex justify-start space-x-2 p-3 max-w-xs rounded-lg text-white w-fit ${msg.sender === currentUser ? ' self-end ml-auto' : ' self-start mr-auto'}`}
                     >
                         <img
                             src={`https://ui-avatars.com/api/?name=${msg.sender}&background=random`}
@@ -162,7 +162,7 @@ const ChatPage = ({ onLeave }) => {
                         />
                         <div>
                             <p className="text-sm font-semibold">{msg.sender}</p>
-                            <p>{msg.content}</p>
+                            <p className={` rounded-lg m-2 p-2 ${msg.sender === currentUser ? 'bg-indigo-950' : 'bg-gray-700 '}`}>{msg.content}</p>
                             <span className="text-xs text-gray-300 block text-right">{timeAgo(msg.timeStamp)}</span>
                         </div>
                     </div>

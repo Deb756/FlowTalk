@@ -16,4 +16,4 @@ export const timeAgo = (timestamp) => {
 };
 
 // Example Usage:
-console.log(timeAgo("2025-02-02T17:01:47.098418")); // Output: "2 hours ago" (if current time is 19:01)
+// console.log(timeAgo("2025-02-02T17:01:47.098418")); // Output: "2 hours ago" (if current time is 19:01)

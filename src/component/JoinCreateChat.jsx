@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
 import { createRoom, joinChatApi } from '../services/RoomService';
-
+import FTlogo from '../assets/logo.webp'
 import { useNavigate } from 'react-router-dom';
 import useChatContext from '../contextApi/ChatContext';
+import TextAnimator from '../component/TextAnimator'
 
 
 const JoinCreateChat = () => {
@@ -18,7 +19,7 @@ const JoinCreateChat = () => {
     const handleFormInputChanges = (event) => {
         setDetails({
             ...details,
-            [event.target.name]: event.target.value,  // Fixed typo: "naame" -> "name"
+            [event.target.name]: event.target.value,
         });
     };
 
@@ -42,7 +43,7 @@ const JoinCreateChat = () => {
             setRoomId(details.roomId);
             setConnected(true);
             console.log(roomId);
-            
+
             // forward to chat page
             navigate('/chat')
         } catch (error) {
@@ -87,11 +88,26 @@ const JoinCreateChat = () => {
         }
     };
 
+
     return (
-        <div className="flex items-center justify-center min-h-screen bg-gray-100 dark:bg-gray-950">
+        <div className="flex items-center justify-center flex-col gap-2 min-h-screen bg-gray-100 dark:bg-gray-950">
+            <div className="flex items-center justify-center gap-3 flex-col" >
+                <img
+                    src={FTlogo}
+                    alt="FlowTalk Logo"
+                    style={{
+                        height: '13vh',
+                        borderRadius: '21px',
+                        filter: 'drop-shadow(#5b78e7 1px 1px 20px)'
+                    }}
+                />
+                <div>
+                    <TextAnimator />
+                </div>
+            </div>
             <div className="bg-white dark:bg-gray-800 p-10 rounded-lg shadow-lg w-[30rem]">
                 <h2 className="text-3xl font-semibold text-center text-gray-700 dark:text-gray-200 mb-6">
-                    Chat - App
+                    Create / Join Room
                 </h2>
                 <div className="mb-4">
                     <label className="block text-gray-600 font-bold dark:text-gray-300 mb-1" htmlFor="name">Your Name</label>
