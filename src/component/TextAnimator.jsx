@@ -57,8 +57,8 @@ const TextAnimator = () => {
         width: "100vw",
       }}
     >
-      <div id="textmate">{displayText}</div>
-      <div id="blinker">|</div>
+      <div id="textmate">{displayText}<div id="blinker">|</div></div>
+      
     </div>
   );
 };
