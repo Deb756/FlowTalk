@@ -1,6 +1,6 @@
 export const timeAgo = (timestamp) => {
     const now = new Date();
-    const messageTime = new Date(timestamp); // Convert ISO string to Date object
+    const messageTime = new Date(timestamp);
 
     const diffInSeconds = Math.floor((now - messageTime) / 1000);
 

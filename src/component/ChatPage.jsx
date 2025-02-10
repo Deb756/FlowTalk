@@ -15,6 +15,7 @@ const ChatPage = ({ onLeave }) => {
     const inputRef = useRef(null);
     const chatBoxRef = useRef(null);
     const navigate = useNavigate();
+    // for testing that connected or not
     // console.log(roomId);
     // console.log(currentUser);
     // console.log(connected);
@@ -111,7 +112,7 @@ const ChatPage = ({ onLeave }) => {
         }
     }, [])
 
-    // scroll down
+    // auto scroll down
     useEffect(() => {
         if (chatBoxRef.current) {
             chatBoxRef.current.scroll({
@@ -121,7 +122,7 @@ const ChatPage = ({ onLeave }) => {
         }
     }, [messages])
 
-    // logging out
+    // logging out from chat app
     const handleLogout = () => {
         StompClient.disconnect();
         setConnected(false);

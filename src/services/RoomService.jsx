@@ -15,10 +15,10 @@ export const joinChatApi = async (roomId) => {
 }
 
 export const getMessages = async (roomId, size = 50, page = 0) => {
-    console.log('roomId:', roomId);  // Debugging line
+    console.log('roomId:', roomId);  
     if (!roomId) {
         console.error('Room ID is missing');
-        return;  // Exit the function early if roomId is not provided
+        return;  
     }
 
     const response = await httpClient.get(`/api/rooms/${roomId}/massages?size=${size}&page=${page}`);

@@ -23,6 +23,7 @@ const JoinCreateChat = () => {
         });
     };
 
+    // validate the chat room entry
     const validateForm = () => {
         if (details.roomId.trim() === "" || details.userName.trim() === "") {
             toast.error("Invalid Inputs !!");
@@ -31,6 +32,7 @@ const JoinCreateChat = () => {
         return true;
     };
 
+    // handling buttton of joinroom
     const handleJoinRoom = async () => {
         if (!validateForm()) return;
         // join chat
@@ -57,6 +59,7 @@ const JoinCreateChat = () => {
         }
     };
 
+    // handling button to create room
     const handleCreateRoom = async () => {
         if (!validateForm()) return;
 
@@ -90,6 +93,7 @@ const JoinCreateChat = () => {
 
 
     return (
+        // logo and animation part
         <div className="flex items-center justify-center flex-col gap-2 min-h-screen bg-gray-100 dark:bg-gray-950">
             <div className="flex items-center justify-center gap-3 flex-col" >
                 <img
@@ -105,6 +109,7 @@ const JoinCreateChat = () => {
                     <TextAnimator />
                 </div>
             </div>
+            {/* Container */}
             <div className="bg-white dark:bg-gray-800 p-10 rounded-lg shadow-lg w-[30rem]">
                 <h2 className="text-3xl font-semibold text-center text-gray-700 dark:text-gray-200 mb-6">
                     Create / Join Room
