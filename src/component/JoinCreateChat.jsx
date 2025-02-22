@@ -110,7 +110,7 @@ const JoinCreateChat = () => {
                 </div>
             </div>
             {/* Container */}
-            <div className="bg-white dark:bg-gray-800 p-10 rounded-lg shadow-lg w-[30rem]">
+            <div className="bg-white dark:bg-gray-800 p-10 rounded-lg shadow-lg min-w-80 w-[50%]">
                 <h2 className="text-3xl font-semibold text-center text-gray-700 dark:text-gray-200 mb-6">
                     Create / Join Room
                 </h2>
