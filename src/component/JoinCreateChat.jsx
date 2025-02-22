@@ -69,7 +69,7 @@ const JoinCreateChat = () => {
         try {
             const response = await createRoom(details.roomId);
             console.log(response);
-            toast.success("room created successfully");
+            toast.success("Room created successfully");
             // join chat room
             setCurrentUser(details.userName);
             setRoomId(response.roomId);
@@ -85,7 +85,7 @@ const JoinCreateChat = () => {
             }
             else {
 
-                toast.error("error in creating room");
+                toast.error("Error in creating Room !");
             }
 
         }
